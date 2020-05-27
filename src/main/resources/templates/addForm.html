@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add form</title>
+</head>
+<body>
+<button> <a th:href="@{/home}">Home</a> </button>
+<button> <a th:href="@{/add}">Add</a> </button>
+<h1>Add New Job Form</h1>
+<form action="#" th:action="@{/check}" th:object="${newToDoList}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+
+    Name: <input type="text" th:field="*{name}">
+    <span th:if="${#fields.hasErrors('name')}"
+          th:errors="*{name}">
+        </span><br/>
+
+    Description: <input type="text" th:field="*{description}">
+    <span th:if="${#fields.hasErrors('description')}"
+          th:errors="*{description}">
+        </span><br/>
+
+    Priority: <input type="text" th:field="*{priority}">
+    <span th:if="${#fields.hasErrors('priority')}"
+          th:errors="*{priority}">
+        </span><br/>
+
+    Due-date: <input type="text" th:field="*{date}" placeholder="mm-dd-yyyy">
+    <span th:if="${#fields.hasErrors('date')}"
+          th:errors="*{date}">
+        </span><br/>
+
+    is_completed:<input type="text" th:field="*{is_completed}" placeholder="true/false">
+    <span th:if="${#fields.hasErrors('is_completed')}"
+          th:errors="*{is_completed}">
+        </span><br/>
+    <input type="submit" value="Done">
+</form>
+</body>
+</html>

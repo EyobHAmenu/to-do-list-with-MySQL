@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+<button> <a th:href="@{/home}">Home</a> </button>
+<button> <a th:href="@{/add}">Add</a> </button>
+<h1>List of All you Jobs</h1>
+<table>
+    <tr>
+        <th>Type of Job</th>
+        <th>Action</th>
+    </tr>
+    <tr th:each="list : ${allToDoList}">
+        <td th:text="${list.name}"></td>
+        <td>
+            <button><a th:href="@{/update/{id} (id = ${list.id})}">Update</a></button>
+            <button><a th:href="@{/detail/{id} (id = ${list.id})}">Detail</a></button>
+            <button><a th:href="@{/delete/{id} (id = ${list.id})}">Delete</a></button>
+        </td>
+    </tr>
+</table>
+
+
+</body>
+</html>

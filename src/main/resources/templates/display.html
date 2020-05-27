@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>detail</title>
+</head>
+<body>
+    <button> <a th:href="@{/home}">Home</a> </button>
+    <button> <a th:href="@{/add}">Add</a> </button>
+    <h1>Detail information about the job</h1>
+    Name:<span th:text="${list.name}"></span><br>
+    Description:<span th:text="${list.description}"></span><br>
+    Priority:<span th:text="${list.priority}"></span><br>
+    Date:<span th:text="${list.date}"></span><br>
+    Is completed:<span th:text="${list.is_completed}"></span><br>
+</body>
+</html>
